@@ -14,7 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => DiscoverProvider())
+        // operador de cascada 
+        ChangeNotifierProvider(
+          lazy: false, // se pone porque tiene carga perezosa y con false le estamos diciendo que cargue directamente los videos
+          create: (_) => DiscoverProvider()..loadNextPage()
+        )
       ],
       child: MaterialApp(
         title: 'TokTik',
