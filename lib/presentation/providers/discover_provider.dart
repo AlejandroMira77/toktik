@@ -11,7 +11,7 @@ class DiscoverProvider extends ChangeNotifier {
 
   Future<void> loadNextPage() async {
 
-    await Future.delayed(const Duration(seconds: 2));
+    // await Future.delayed(const Duration(seconds: 2)); // era para simular la carda de una data de http
 
     // vamos a mapear la lista de videos
     // mientras tenemos un consumo http
